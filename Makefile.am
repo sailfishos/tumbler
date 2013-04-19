@@ -22,8 +22,5 @@ SUBDIRS =								\
 	tumbler								\
 	plugins								\
 	tumblerd							\
-	tests								\
-	docs
+	tests
 
-DISTCHECK_CONFIGURE_FLAGS =						\
-	--enable-gtk-doc

@@ -123,11 +123,6 @@ dnl ******************************
 linguas=`ls po/*.po | sed s/.po//g | sed sApo/AA | xargs`
 XDT_I18N([$linguas])
 
-dnl *************************
-dnl *** Check for GTK-Doc ***
-dnl *************************
-GTK_DOC_CHECK(1.9)
-
 dnl ***********************************
 dnl *** Check for dbus-binding-tool ***
 dnl ***********************************
@@ -178,10 +173,6 @@ AC_SUBST([GTK_DOC_EXTRA_CFLAGS])
 
 AC_OUTPUT([
 Makefile
-docs/Makefile
-docs/reference/Makefile
-docs/reference/tumbler/Makefile
-docs/reference/tumbler/version.xml
 plugins/Makefile
 plugins/font-thumbnailer/Makefile
 plugins/gst-thumbnailer/Makefile
