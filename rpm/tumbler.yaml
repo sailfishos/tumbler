@@ -1,0 +1,61 @@
+Name: tumbler  
+Summary: D-Bus service for thumbnailing
+Version: 0.1.22
+Release: 1  
+Group: Applications/System
+License: GPLv2+  
+URL: https://maemo.gitorious.org/maemo-af/tumbler
+Description: |  
+    Tumbler is a D-Bus service for applications to request thumbnails for
+    various URI schemes and MIME types
+Sources:
+    - maemo-af-tumbler-meego_0.1.22-1meego2.tar.gz
+ExtraSources:
+    - flavors.conf;%{_sysconfdir}/xdg/thumbnails/
+Patches:
+    - 0001-Add-a-x-huge-thumbnail-size-512x512.patch
+    - 0002-Add-GStreamer-based-thumbnailer-for-video-thumbnails.patch
+    - 0003-fix-tumblerd-segmentfault-error.patch 
+    - tumbler-0.1.22-remove-gtk.patch
+    - 0002-Replace-python2.6-calls-with-python-calls.patch
+    - tumbler-no-werror-with-debug.patch
+    - 0004-nemo-tests-xml-fix.patch
+PkgBR:
+    - gettext
+    - intltool
+    - libjpeg-devel
+    # For test build.
+    - python
+    - python-imaging
+    - dbus-python
+    - pygobject2
+PkgConfigBR:
+    - quillimagefilter
+    - glib-2.0 >= 2.16.0
+    - gio-2.0 >= 2.16.0 
+    - gthread-2.0 >= 2.16.0
+    - dbus-1 >= 1.0.0
+    - dbus-glib-1 >= 0.72
+#    - gstreamer-0.10
+Configure: configure
+ConfigOptions:
+    - --disable-pixbuf-thumbnailer
+    - --disable-font-thumbnailer
+    - --enable-quill-thumbnailer
+    - --disable-xdg-cache
+    - --disable-jpeg-thumbnailer
+    - --disable-ffmpeg-thumbnailer
+    - --disable-poppler-thumbnailer
+#    - --enable-debug=full
+AutoSubPackages:
+    - devel
+SubPackages:
+    - Name: tests
+      Summary:    Files for %{name}
+      Group:      Development/Libraries
+      Requires:   "%{name} = %{version}-%{release}"
+      Description: |
+          Tests and tests.xml file for %{name} 
+      Requires:
+          - python-imaging
+
