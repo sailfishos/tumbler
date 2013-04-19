@@ -106,7 +106,7 @@ class TumblerVideoFormatsTests(unittest.TestCase):
 		# cleanup
 		deleteAllThumbnails()
 
-	def test_05_video_resizing(self):
+	def _test_05_video_resizing(self):
 		''' check if videos are resized properly '''
 		#useTestFlavorsConf() - had to remove that and test on standard flavors only
 		deleteAllThumbnails()

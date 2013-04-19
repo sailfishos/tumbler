@@ -28,7 +28,7 @@ def parseTestCases(module, moduleName, className, classObject, moduleFileName, t
 
 		script = os.path.join (cfg.DATADIR, "tumbler-tests", testScript)
 
-		ret += "             <step>su - user -c \"" + script + " " + className + "." + testCase + "\"</step>\n"
+		ret += "             <step>" + script + " " + className + "." + testCase + "</step>\n"
 		ret += "         </case>\n"
 
 	ret += "         <environments>\n"
