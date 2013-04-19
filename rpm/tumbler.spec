@@ -13,17 +13,10 @@ Version:    0.1.22
 Release:    1
 Group:      Applications/System
 License:    GPLv2+
-URL:        https://maemo.gitorious.org/maemo-af/tumbler
+URL:        https://github.org/nemomobile/tumbler
 Source0:    maemo-af-tumbler-meego_0.1.22-1meego2.tar.gz
 Source1:    flavors.conf
 Source100:  tumbler.yaml
-Patch0:     0001-Add-a-x-huge-thumbnail-size-512x512.patch
-Patch1:     0002-Add-GStreamer-based-thumbnailer-for-video-thumbnails.patch
-Patch2:     0003-fix-tumblerd-segmentfault-error.patch
-Patch3:     tumbler-0.1.22-remove-gtk.patch
-Patch4:     0002-Replace-python2.6-calls-with-python-calls.patch
-Patch5:     tumbler-no-werror-with-debug.patch
-Patch6:     0004-nemo-tests-xml-fix.patch
 Requires(post): /sbin/ldconfig
 Requires(postun): /sbin/ldconfig
 BuildRequires:  pkgconfig(quillimagefilter)
@@ -65,22 +58,8 @@ Development files for %{name}.
 
 
 %prep
-%setup -q -n maemo-af-%{name}
+%setup -q -n %{name}-%{version}
 
-# 0001-Add-a-x-huge-thumbnail-size-512x512.patch
-%patch0 -p1
-# 0002-Add-GStreamer-based-thumbnailer-for-video-thumbnails.patch
-%patch1 -p1
-# 0003-fix-tumblerd-segmentfault-error.patch
-%patch2 -p1
-# tumbler-0.1.22-remove-gtk.patch
-%patch3 -p1
-# 0002-Replace-python2.6-calls-with-python-calls.patch
-%patch4 -p1
-# tumbler-no-werror-with-debug.patch
-%patch5 -p1
-# 0004-nemo-tests-xml-fix.patch
-%patch6 -p1
 # >> setup
 # << setup
 

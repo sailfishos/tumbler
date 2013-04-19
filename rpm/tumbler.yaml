@@ -4,7 +4,7 @@ Version: 0.1.22
 Release: 1  
 Group: Applications/System
 License: GPLv2+  
-URL: https://maemo.gitorious.org/maemo-af/tumbler
+URL: https://github.org/nemomobile/tumbler
 Description: |  
     Tumbler is a D-Bus service for applications to request thumbnails for
     various URI schemes and MIME types
@@ -12,14 +12,6 @@ Sources:
     - maemo-af-tumbler-meego_0.1.22-1meego2.tar.gz
 ExtraSources:
     - flavors.conf;%{_sysconfdir}/xdg/thumbnails/
-Patches:
-    - 0001-Add-a-x-huge-thumbnail-size-512x512.patch
-    - 0002-Add-GStreamer-based-thumbnailer-for-video-thumbnails.patch
-    - 0003-fix-tumblerd-segmentfault-error.patch 
-    - tumbler-0.1.22-remove-gtk.patch
-    - 0002-Replace-python2.6-calls-with-python-calls.patch
-    - tumbler-no-werror-with-debug.patch
-    - 0004-nemo-tests-xml-fix.patch
 PkgBR:
     - gettext
     - intltool
