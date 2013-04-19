@@ -1,2 +1,2 @@
-#!/usr/bin/python2.6
+#!/usr/bin/python
 # -*- coding: utf-8 -*-

@@ -1,4 +1,4 @@
-#!/usr/bin/python2.6
+#!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
 # You need to have PIL installed to make it working:

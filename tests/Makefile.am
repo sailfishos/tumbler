@@ -17,7 +17,7 @@ config_SCRIPTS = 		    \
 testrunner = run-tumbler-unit-tests.py
 
 tests.xml: ${functional_tests}
-	python2.6 generate-tests-xml.py ${testrunner} $@  ${functional_tests}
+	python generate-tests-xml.py ${testrunner} $@  ${functional_tests}
 
 functional-test: ${functional_tests}
 	@if test -h /targets/links/scratchbox.config ; then \
