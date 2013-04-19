@@ -84,6 +84,8 @@ main (int    argc,
   if (!g_thread_supported ())
     g_thread_init (NULL);
 
+  dbus_g_thread_init();
+  
   /* try to connect to the D-Bus session bus */
   connection = dbus_g_bus_get (DBUS_BUS_SESSION, &error);
 
