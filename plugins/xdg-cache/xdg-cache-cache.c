@@ -136,6 +136,9 @@ xdg_cache_cache_init (XDGCacheCache *cache)
 
   flavor = tumbler_thumbnail_flavor_new_large ();
   cache->flavors = g_list_prepend (cache->flavors, flavor);
+
+  flavor = tumbler_thumbnail_flavor_new ("x-huge", 512, 512);
+  cache->flavors = g_list_prepend (cache->flavors, flavor);
 }
 
 
