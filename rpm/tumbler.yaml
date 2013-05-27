@@ -9,7 +9,7 @@ Description: |
     Tumbler is a D-Bus service for applications to request thumbnails for
     various URI schemes and MIME types
 Sources:
-    - maemo-af-tumbler-meego_0.1.22-1meego2.tar.gz
+    - "%{name}-%{version}.tar.gz"
 ExtraSources:
     - flavors.conf;%{_sysconfdir}/xdg/thumbnails/
 PkgBR:
