@@ -1,11 +1,11 @@
-Name: tumbler  
+Name: tumbler
 Summary: D-Bus service for thumbnailing
 Version: 0.1.22
-Release: 1  
+Release: 1
 Group: Applications/System
-License: GPLv2+  
+License: GPLv2+
 URL: https://github.org/nemomobile/tumbler
-Description: |  
+Description: |
     Tumbler is a D-Bus service for applications to request thumbnails for
     various URI schemes and MIME types
 Sources:
@@ -22,9 +22,9 @@ PkgBR:
     - dbus-python
     - pygobject2
 PkgConfigBR:
-    - quillimagefilter
+    - quillimagefilter-qt5
     - glib-2.0 >= 2.16.0
-    - gio-2.0 >= 2.16.0 
+    - gio-2.0 >= 2.16.0
     - gthread-2.0 >= 2.16.0
     - dbus-1 >= 1.0.0
     - dbus-glib-1 >= 0.72
@@ -47,8 +47,7 @@ SubPackages:
       Group:      Development/Libraries
       Requires:   "%{name} = %{version}-%{release}"
       Description: |
-          Tests and tests.xml file for %{name} 
+          Tests and tests.xml file for %{name}
       Requires:
           - python-imaging
           - dbus-python
-

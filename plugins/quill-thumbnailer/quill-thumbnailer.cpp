@@ -37,7 +37,7 @@
 
 #include <QUrl>
 #include <QDir>
-#include <QApplication>
+#include <QCoreApplication>
 #include <QuillImageFilter>
 #include <QuillImageFilterFactory>
 #include <QCryptographicHash>
@@ -45,7 +45,7 @@
 static void quill_thumbnailer_create (TumblerAbstractThumbnailer *thumbnailer,
                                       GCancellable               *cancellable,
                                       TumblerFileInfo            *info);
-static QApplication *app;
+static QCoreApplication *app;
 
 struct _QuillThumbnailerClass
 {
@@ -76,7 +76,7 @@ quill_thumbnailer_class_init (QuillThumbnailerClass *klass)
   int argc = 0;
   char *argv[2] = { NULL, NULL };
 
-  app = new QApplication (argc, argv, QApplication::Tty);
+  app = new QCoreApplication (argc, argv);
 
   abstractthumbnailer_class = TUMBLER_ABSTRACT_THUMBNAILER_CLASS (klass);
   abstractthumbnailer_class->create = quill_thumbnailer_create;
@@ -248,7 +248,7 @@ quill_thumbnailer_create (TumblerAbstractThumbnailer *thumbnailer,
   signal_id = g_signal_connect (cancellable, "cancelled",
                                 G_CALLBACK (on_cancelled),
                                 load);
-  m_url.setEncodedUrl (uri);
+  m_url = QUrl::fromEncoded(uri);
 
   load->setOption (QuillImageFilter::FileName, 
                    m_url.toLocalFile());

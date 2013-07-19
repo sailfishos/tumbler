@@ -47,7 +47,7 @@ AC_ARG_ENABLE([quill-thumbnailer], [AC_HELP_STRING([--enable-quill-thumbnailer],
   [ac_tumbler_quill_thumbnailer=$enableval], [ac_tumbler_quill_thumbnailer=no])
 if test x"$ac_tumbler_quill_thumbnailer" = x"yes"; then
   dnl Check for quill
-  PKG_CHECK_MODULES([QUILL], [quillimagefilter >= 1.0.0], [], [ac_tumbler_quill_thumbnailer=no])
+  PKG_CHECK_MODULES([QUILL], [quillimagefilter-qt5 >= 1.0.0], [], [ac_tumbler_quill_thumbnailer=no])
 fi
 
 AC_MSG_CHECKING([whether to build the Quill thumbnailer plugin])
