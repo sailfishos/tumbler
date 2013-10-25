@@ -46,6 +46,8 @@ static void quill_thumbnailer_create (TumblerAbstractThumbnailer *thumbnailer,
                                       GCancellable               *cancellable,
                                       TumblerFileInfo            *info);
 static QCoreApplication *app;
+static char *fake_argv[2] = { "tumbler", NULL };
+static int fake_argc = 1;
 
 struct _QuillThumbnailerClass
 {
@@ -73,10 +75,8 @@ static void
 quill_thumbnailer_class_init (QuillThumbnailerClass *klass)
 {
   TumblerAbstractThumbnailerClass *abstractthumbnailer_class;
-  int argc = 0;
-  char *argv[2] = { NULL, NULL };
 
-  app = new QCoreApplication (argc, argv);
+  app = new QCoreApplication (fake_argc, fake_argv);
 
   abstractthumbnailer_class = TUMBLER_ABSTRACT_THUMBNAILER_CLASS (klass);
   abstractthumbnailer_class->create = quill_thumbnailer_create;
