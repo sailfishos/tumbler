@@ -45,6 +45,7 @@ Requires:   %{name} = %{version}-%{release}
 Requires:   python-imaging
 Requires:   dbus-python
 Requires:   pygobject2
+Requires:   qt5-qtimageformats-plugin-tiff
 
 %description tests
 Tests and tests.xml file for %{name}
