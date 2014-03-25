@@ -52,3 +52,4 @@ SubPackages:
           - python-imaging
           - dbus-python
           - pygobject2
+          - qt5-qtimageformats-plugin-tiff
