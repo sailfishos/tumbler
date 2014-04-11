@@ -3,7 +3,7 @@
 
 import dbus
 from dbus.mainloop.glib import DBusGMainLoop
-import gobject
+from gi.repository import GObject
 import sys
 
 # log Levels:
