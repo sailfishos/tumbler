@@ -45,6 +45,10 @@ tumbler_quill_thumbnailer_la_CFLAGS =					\
 	$(PLATFORM_CPPFLAGS)						\
 	$(QUILL_CFLAGS)							
 
+tumbler_quill_thumbnailer_la_CPPFLAGS =					\
+	$(tumbler_quill_thumbnailer_la_CFLAGS)				\
+	-std=c++11
+
 tumbler_quill_thumbnailer_la_LDFLAGS =					\
 	-avoid-version							\
 	-export-dynamic							\
