@@ -33,7 +33,7 @@ tumbler_quill_thumbnailer_la_SOURCES =					\
 	quill-thumbnailer.cpp						\
 	quill-thumbnailer.h
 
-INCLUDES=								\
+tumbler_quill_thumbnailer_la_CFLAGS =					\
 	-I$(top_builddir)						\
 	-I$(top_builddir)/plugins					\
 	-I$(top_srcdir)							\
@@ -57,7 +57,7 @@ tumbler_quill_thumbnailer_la_LIBADD =					\
 	$(QUILL_LIBS)
 
 if TUMBLER_PIXBUF_THUMBNAILER
-INCLUDES += $(GDK_PIXBUF_CFLAGS)
+tumbler_quill_thumbnailer_la_CFLAGS += $(GDK_PIXBUF_CFLAGS)
 tumbler_quill_thumbnailer_la_LIBADD += $(GDK_PIXBUF_LIBS)
 endif
 
