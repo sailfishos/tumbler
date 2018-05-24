@@ -33,7 +33,7 @@ tumbler_quill_thumbnailer_la_SOURCES =					\
 	quill-thumbnailer.cpp						\
 	quill-thumbnailer.h
 
-INCLUDES=								\
+tumbler_quill_thumbnailer_la_CFLAGS =					\
 	-I$(top_builddir)						\
 	-I$(top_builddir)/plugins					\
 	-I$(top_srcdir)							\
@@ -44,6 +44,10 @@ INCLUDES=								\
 	$(GLIB_CFLAGS)							\
 	$(PLATFORM_CPPFLAGS)						\
 	$(QUILL_CFLAGS)							
+
+tumbler_quill_thumbnailer_la_CPPFLAGS =					\
+	$(tumbler_quill_thumbnailer_la_CFLAGS)				\
+	-std=c++11
 
 tumbler_quill_thumbnailer_la_LDFLAGS =					\
 	-avoid-version							\
@@ -57,7 +61,7 @@ tumbler_quill_thumbnailer_la_LIBADD =					\
 	$(QUILL_LIBS)
 
 if TUMBLER_PIXBUF_THUMBNAILER
-INCLUDES += $(GDK_PIXBUF_CFLAGS)
+tumbler_quill_thumbnailer_la_CFLAGS += $(GDK_PIXBUF_CFLAGS)
 tumbler_quill_thumbnailer_la_LIBADD += $(GDK_PIXBUF_LIBS)
 endif
 
