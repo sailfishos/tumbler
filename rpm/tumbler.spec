@@ -72,7 +72,8 @@ intltoolize --force --copy --automake
 autoreconf -v -f -i -I m4
 # << build pre
 
-%configure --disable-static \
+%configure --libdir=%{_libdir} \
+    --disable-static \
     --disable-pixbuf-thumbnailer \
     --disable-font-thumbnailer \
     --enable-quill-thumbnailer \
